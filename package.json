@@ -5,7 +5,7 @@
   "icon": "img/icon.png",
   "author": "Zoltan Gonczi",
   "publisher": "gonczi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "homepage": "https://github.com/gonczi/vscode-cunit-test-adapter",
   "repository": {
