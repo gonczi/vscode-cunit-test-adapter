@@ -1,0 +1,94 @@
+{
+  "name": "vscode-cunit-test-adapter",
+  "displayName": "CUnit Test Explorer",
+  "description": "Run your CUnit tests in the Sidebar of Visual Studio Code",
+  "icon": "img/icon.png",
+  "author": "Zoltan Gonczi",
+  "publisher": "gonczi",
+  "version": "0.0.1",
+  "license": "MIT",
+  "homepage": "https://github.com/gonczi/vscode-cunit-test-adapter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gonczi/vscode-cunit-test-adapter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gonczi/vscode-cunit-test-adapter/issues"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "test",
+    "testing"
+  ],
+  "main": "out/main.js",
+  "scripts": {
+    "clean": "rimraf out *.vsix",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "rebuild": "npm run clean && npm run build",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "dependencies": {
+    "glob": "^8.1.0",
+    "tslib": "^1.9.3",
+    "vscode-test-adapter-api": "^1.7.0",
+    "vscode-test-adapter-util": "^0.7.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.1",
+    "@types/node": "^14.17.17",
+    "@types/vscode": "~1.23.0",
+    "typescript": "^3.9.10",
+    "vsce": "^2.15.0"
+  },
+  "engines": {
+    "vscode": "^1.23.0"
+  },
+  "extensionDependencies": [
+    "hbenl.vscode-test-explorer"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "CUnit Test Explorer configuration",
+      "properties": {
+        "cunitExplorer.logpanel": {
+          "description": "write diagnotic logs to an output panel",
+          "type": "boolean",
+          "scope": "resource"
+        },
+        "cunitExplorer.logfile": {
+          "description": "write diagnostic logs to the given file",
+          "type": "string",
+          "scope": "resource"
+        },
+        "cunitExplorer.command": {
+          "description": "command",
+          "type": "string",
+          "scope": "resource"
+        },
+        "cunitExplorer.workdir_relative": {
+          "description": "workdir_relative",
+          "type": "string",
+          "scope": "resource"
+        },
+        "cunitExplorer.docker_container_name": {
+          "description": "docker_container_name",
+          "type": "string",
+          "scope": "resource"
+        },
+        "cunitExplorer.docker_base_path": {
+          "description": "docker_base_path",
+          "type": "string",
+          "scope": "resource"
+        }
+      }
+    }
+  }
+}
