@@ -333,6 +333,7 @@ export class ExampleAdapter implements TestAdapter {
 				self.testStatesEmitter.fire(<TestEvent>{ type: 'test', test: testChild.id, state: 'running' });
 			}
 	
+			this.log.info(`Exec: ${command}`);
 			const child = child_process.exec(
 				command,
 				{
